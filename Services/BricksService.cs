@@ -40,6 +40,7 @@ namespace legoapi.Services
       Brick original = Get(editBrick.Id);
 
       original.Description = editBrick.Description != null ? editBrick.Description : original.Description;
+      original.Color = editBrick.Color != null ? editBrick.Color : original.Color;
 
       return _repo.Edit(original);
 

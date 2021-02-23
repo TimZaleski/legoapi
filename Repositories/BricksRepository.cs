@@ -32,9 +32,9 @@ namespace legoapi.Repositories
     {
       string sql = @"
             INSERT INTO bricks
-            (description)
+            (description, color)
             VALUES
-            (@Description);
+            (@Description, @Color);
             SELECT LAST_INSERT_ID();";
       int id = _db.ExecuteScalar<int>(sql, newBrick);
       newBrick.Id = id;
@@ -54,7 +54,8 @@ namespace legoapi.Repositories
       string sql = @"
         UPDATE bricks
         SET
-            description = @Description
+            description = @Description,
+            color = @Color
         WHERE id = @Id;
         SELECT * FROM bricks WHERE id = @Id;";
       return _db.QueryFirstOrDefault<Brick>(sql, original);
