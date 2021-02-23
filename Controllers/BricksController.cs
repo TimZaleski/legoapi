@@ -1,24 +1,23 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
-using burgerapi.db;
-using burgerapi.Models;
-using burgerapi.Services;
+using legoapi.Models;
+using legoapi.Services;
 
-namespace burgerapi.Controllers
+namespace legoapi.Controllers
 {
   [ApiController]
-  [Route("api/drinks")]
-  public class DrinksController : ControllerBase
+  [Route("api/bricks")]
+  public class BricksController : ControllerBase
   {
 
-    private readonly DrinksService _ds;
-    public DrinksController(DrinksService ds)
+    private readonly BricksService _ds;
+    public BricksController(BricksService ds)
     {
       _ds = ds;
     }
 
     [HttpGet]
-    public ActionResult<IEnumerable<Drink>> Get()
+    public ActionResult<IEnumerable<Brick>> Get()
     {
       try
       {
@@ -32,12 +31,12 @@ namespace burgerapi.Controllers
 
 
     [HttpGet("{id}")]
-    public ActionResult<Side> GetDrinkById(int id)
+    public ActionResult<Brick> GetBrickById(int id)
     {
       try
       {
-        Drink drink = _ds.Get(id);
-        return Ok(drink);
+        Brick brick = _ds.Get(id);
+        return Ok(brick);
       }
       catch (System.Exception err)
       {
@@ -49,12 +48,12 @@ namespace burgerapi.Controllers
     //frombody will create a new blank object with the properties set to null or their defaults
     //move data from the object sent to create your new class as long as it passes data sanitization.
     [HttpPost]
-    public ActionResult<Burger> Create([FromBody] Drink newDrink)
+    public ActionResult<Brick> Create([FromBody] Brick newBrick)
     {
       try
       {
-        Drink drink = _ds.Create(newDrink);
-        return Ok(drink);
+        Brick brick = _ds.Create(newBrick);
+        return Ok(brick);
       }
       catch (System.Exception err)
       {
@@ -64,12 +63,12 @@ namespace burgerapi.Controllers
 
 
     [HttpDelete("{id}")]
-    public ActionResult<string> BuyDrink(int id)
+    public ActionResult<string> Delete(int id)
     {
       try
       {
         _ds.Delete(id);
-        return Ok("Bought");
+        return Ok("Deleted");
       }
       catch (System.Exception err)
       {
@@ -78,12 +77,12 @@ namespace burgerapi.Controllers
     }
 
     [HttpPut("{id}")]  
-    public ActionResult<string> UpdateDrink([FromBody] Drink updated, int id) {  
+    public ActionResult<string> UpdateBurger([FromBody] Brick updated, int id) {  
       try
       { 
         updated.Id = id;
-        Drink drink = _ds.Edit(updated);
-        return Ok(drink);
+        Brick brick = _ds.Edit(updated);
+        return Ok(brick);
       }
       catch (System.Exception err)
       {  

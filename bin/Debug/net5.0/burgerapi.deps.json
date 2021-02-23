@@ -23,7 +23,7 @@
   },
   "targets": {
     ".NETCoreApp,Version=v5.0": {
-      "burgerapi/1.0.0": {
+      "legoapi/1.0.0": {
         "dependencies": {
           "Swashbuckle.AspNetCore": "5.6.3",
           "Dapper": "2.0.78",
@@ -313,10 +313,10 @@
           "WindowsBase": "4.0.0.0"
         },
         "runtime": {
-          "burgerapi.dll": {}
+          "legoapi.dll": {}
         },
         "compile": {
-          "burgerapi.dll": {}
+          "legoapi.dll": {}
         }
       },
       "Dapper/2.0.78": {
@@ -2101,7 +2101,7 @@
     }
   },
   "libraries": {
-    "burgerapi/1.0.0": {
+    "legoapi/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
-using burgerapi.Repositories;
-using burgerapi.Services;
+using legoapi.Repositories;
+using legoapi.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -16,7 +16,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using MySqlConnector;
 
-namespace burgerapi
+namespace legoapi
 {
     public class Startup
     {
@@ -30,18 +30,14 @@ namespace burgerapi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<BurgersService>();
-            services.AddTransient<BurgersRepository>();
-            services.AddTransient<SidesService>();
-            services.AddTransient<SidesRepository>();
-            services.AddTransient<DrinksService>();
-            services.AddTransient<DrinksRepository>();
+            services.AddTransient<BricksService>();
+            services.AddTransient<BricksRepository>();
             services.AddControllers();
             //NOTE create a scoped connection to the database
             services.AddScoped<IDbConnection>(x => CreateDbConnection());
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "burgerapi", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "legoapi", Version = "v1" });
             });
         }
 
@@ -58,7 +54,7 @@ namespace burgerapi
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "burgerapi v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "legoapi v1"));
             }
 
             app.UseHttpsRedirection();

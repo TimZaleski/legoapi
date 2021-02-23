@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\source\\codeworks\\legoapi\\burgerapi.csproj",
+  "FilePath": "c:\\source\\codeworks\\legoapi\\legoapi.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "5.0",
@@ -15600,7 +15600,7 @@
     ],
     "CSharpLanguageVersion": 900
   },
-  "RootNamespace": "burgerapi",
+  "RootNamespace": "legoapi",
   "Documents": [],
   "SerializationFormat": "0.2"
 }

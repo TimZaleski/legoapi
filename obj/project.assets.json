@@ -265,9 +265,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\source\\codeworks\\legoapi\\burgerapi.csproj",
-      "projectName": "burgerapi",
-      "projectPath": "C:\\source\\codeworks\\legoapi\\burgerapi.csproj",
+      "projectUniqueName": "C:\\source\\codeworks\\legoapi\\legoapi.csproj",
+      "projectName": "legoapi",
+      "projectPath": "C:\\source\\codeworks\\legoapi\\legoapi.csproj",
       "packagesPath": "C:\\Users\\zales\\.nuget\\packages\\",
       "outputPath": "C:\\source\\codeworks\\legoapi\\obj\\",
       "projectStyle": "PackageReference",
